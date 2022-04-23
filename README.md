@@ -1,4 +1,4 @@
-# Read you, wrote you
+# Great Reads
 
 ## Table of Contents 
 
