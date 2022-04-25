@@ -20,9 +20,9 @@ Insert user story here!!
 
 
 ## Links
-GitHub:
+GitHub: https://github.com/cphill11/great-reads.git
 
-Heroku:
+Heroku: https://cwru-great-reads.herokuapp.com/ deployed to Heroku
 
 
 ## Image
