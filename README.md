@@ -16,7 +16,15 @@ Insert user story here!!
 
 
 ## Installation
-* 
+* mongoose
+* mongoDB
+* apollo-server-express
+* graphQL
+* apollo-client
+* bcrypt
+* jsonwebtoken
+* react-router-dom
+* web-vitals
 
 
 ## Links
