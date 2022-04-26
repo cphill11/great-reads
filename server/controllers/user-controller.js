@@ -1,4 +1,4 @@
-// template; evaluate for viability
+// template; same code as resolvers (use resolvers as format)
 // import user model
 const { User } = require('../models');
 // import sign token function from auth

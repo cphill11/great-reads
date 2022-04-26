@@ -19,3 +19,10 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_ALL = gql`
+{
+  getAll {
+    username
+  }
+}`
