@@ -1,12 +1,14 @@
 import React from "react";
-import '../index.css';
 
-function Footer() {
-    return (
-        <footer>
-            This is a footer placeholder.
-        </footer>
-    );
-}
+const Footer = () => {
+  return (
+    <footer className="w-100 mt-auto bg-secondary p-4">
+      <div className="container">
+        @2022 By Criste Phillips, Diana Taylor, Savannah Polcen, and Sabrina
+        Zanin
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
