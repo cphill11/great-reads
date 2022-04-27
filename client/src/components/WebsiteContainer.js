@@ -1,38 +1,40 @@
-import React, { useState } from "react";
-import MainPage from "./MainPage";
-// import ContactInfo from "./ContactInfo";
-// import Resume from "./Resume";
-// import Portfolio from "./Portfolio";
-import NavBar from "./NavBar";
-import Footer from "./Footer";
-import Header from "./Header";
+//May not need
 
-export default function WebsiteContainer() {
-    const [currentPage, setCurrentPage] = useState("MainPage");
+// import React, { useState } from "react";
+// import MainPage from "./MainPage";
+// // import ContactInfo from "./ContactInfo";
+// // import Resume from "./Resume";
+// // import Portfolio from "./Portfolio";
+// import NavBar from "./NavBar";
+// import Footer from "./Footer";
+// import Header from "./Header";
 
-     const renderPage = () => {
-         if (currentPage === "MainPage") {
-             return <MainPage />;
-         }
-    //     if (currentPage === "Resume") {
-    //         return <Resume />;
-    //     }
-    //     if (currentPage === "Portfolio") {
-    //         return <Portfolio />;
-    //     }
-    //     if (currentPage === "ContactInfo") {
-    //         return <ContactInfo />;
-    //     }
-    };
+// export default function WebsiteContainer() {
+//     const [currentPage, setCurrentPage] = useState("MainPage");
 
-    const handlePageChange = (page) => setCurrentPage(page);
+//      const renderPage = () => {
+//          if (currentPage === "MainPage") {
+//              return <MainPage />;
+//          }
+//     //     if (currentPage === "Resume") {
+//     //         return <Resume />;
+//     //     }
+//     //     if (currentPage === "Portfolio") {
+//     //         return <Portfolio />;
+//     //     }
+//     //     if (currentPage === "ContactInfo") {
+//     //         return <ContactInfo />;
+//     //     }
+//     };
 
-    return (
-        <div>
-            <Header />
-            <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
-            {renderPage()}
-            <Footer />
-        </div>
-    );
-};
+//     const handlePageChange = (page) => setCurrentPage(page);
+
+//     return (
+//         <div>
+//             <Header />
+//             <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
+//             {renderPage()}
+//             <Footer />
+//         </div>
+//     );
+// };
