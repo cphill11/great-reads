@@ -16,13 +16,21 @@ Insert user story here!!
 
 
 ## Installation
-* 
+* mongoose
+* mongoDB
+* apollo-server-express
+* graphQL
+* apollo-client
+* bcrypt
+* jsonwebtoken
+* react-router-dom
+* web-vitals
 
 
 ## Links
-GitHub:
+GitHub: https://github.com/cphill11/great-reads.git
 
-Heroku:
+Heroku: https://cwru-great-reads.herokuapp.com/ deployed to Heroku
 
 
 ## Image
