@@ -5,8 +5,14 @@ const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 module.exports = {
-  // get one user by either their id or their username <--- intending to be to get OWN user
-  async getMyUser({ user = null, params }, res) {
+  // get all users
+  async getAllUsers(req, res) {
+    const foundUsers = await User.find({});
+    res.json(foundUsers);
+  },
+
+  // get one user by either their id or their username
+  async getUserById({ user = null, params }, res) {
     const foundUser = await User.findOne({
       $or: [{ _id: user ? user._id : params.id }, { username: params.username }],
     });
@@ -16,6 +22,26 @@ module.exports = {
     }
 
     res.json(foundUser);
+  },
+
+  // update one user found by id
+  async updateUser({ params, body }, res) {
+    const updatedUser = await User.findOneAndUpdate({ _id: params.id}, body, { new: true, runValidators: true });
+    if(!updatedUser) {
+      return res.status(400).json({ message: 'Cannot find a user with this id!'});
+    }
+
+    res.json(updatedUser);
+  },
+
+  // delete one user found by id
+  async deleteUser({ params }, res) {
+    const deletedUser = await User.findOneAndDelete({ _id: params.id });
+    if(!deletedUser) {
+      return res.status(400).json({ message: 'Cannot find a user with this id!'});
+    }
+
+    res.json(deletedUser);
   },
 
   // create a user, sign a token, and send it back (to client/src/components/SignUpForm.js)
