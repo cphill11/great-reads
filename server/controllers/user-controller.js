@@ -5,58 +5,7 @@ const { User } = require('../models');
 const { signToken } = require('../utils/auth');
 
 module.exports = {
-  // get all users
-  async getAllUser(req, res) {
-      User.find({})
-        // .populate({
-        //   path: 'thoughts',
-        //   select: '-__v'
-        // })
-        .select('-__v')
-        .sort({ _id: -1 })
-        .then(dbUserData => res.json(dbUserData))
-        .catch(err => {
-          console.log(err);
-          res.sendStatus(400);
-        });
-      },
-
-  // get one user by id
-  getUserById({ params }, res) {
-    User.findOne({ _id: params.id })
-      // .populate({
-      //   path: 'thoughts',
-      //   select: '-__v'
-      // })
-      .select('-__v')
-      .then(dbUserData => res.json(dbUserData))
-      .catch(err => {
-        console.log(err);
-        res.sendStatus(400);
-      });
-  },
-
-  // update user by id
-  updateUser({ params, body }, res) {
-    User.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
-      .then(dbUserData => {
-        if (!dbUserData) {
-          res.status(404).json({ message: 'No user found with this id!' });
-          return;
-        }
-        res.json(dbUserData);
-      })
-      .catch(err => res.json(err));
-  },
-  
-    // delete user
-    deleteUser({ params }, res) {
-      User.findOneAndDelete({ _id: params.id })
-        .then(dbUserData => res.json(dbUserData))
-        .catch(err => res.json(err));
-    },
-
-  // get a single user by either their id or their username <--- intending to be to get OWN user
+  // get one user by either their id or their username <--- intending to be to get OWN user
   async getMyUser({ user = null, params }, res) {
     const foundUser = await User.findOne({
       $or: [{ _id: user ? user._id : params.id }, { username: params.username }],

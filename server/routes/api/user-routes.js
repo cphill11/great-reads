@@ -1,11 +1,9 @@
 const router = require('express').Router();
 const {
-  getAllUser,
-  getUserById,
+
   createUser,
   getMyUser,
-  updateUser,
-  deleteUser,
+  getSingleUser,
   saveBook,
   deleteBook,
   login
@@ -14,11 +12,8 @@ const {
 // import middleware
 const { authMiddleware } = require('../../utils/auth');
 
-// /api/users
-router
-  .route('/')
-  .get(getAllUser)
-  .post(createUser).put(authMiddleware, saveBook);
+// put authMiddleware anywhere we need to send a token for verification of user
+router.route('/').post(createUser).put(authMiddleware, saveBook);
 
 // api/users/:id
 router
@@ -38,9 +33,9 @@ router
 
 
 // put authMiddleware anywhere we need to send a token for verification of user
-// router.route('/').post(createUser).put(authMiddleware, saveBook);
-// router.route('/login').post(login);
-// router.route('/me').get(authMiddleware, getMyUser);
-// router.route('/books/:bookId').delete(authMiddleware, deleteBook);
+router.route('/').post(createUser).put(authMiddleware, saveBook);
+router.route('/login').post(login);
+router.route('/me').get(authMiddleware, getMyUser);
+router.route('/books/:bookId').delete(authMiddleware, deleteBook);
 
 module.exports = router;
