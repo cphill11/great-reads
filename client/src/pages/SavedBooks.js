@@ -1,5 +1,3 @@
-// template; evaluate for viability
-
 import React from "react";
 import {
   Jumbotron,
