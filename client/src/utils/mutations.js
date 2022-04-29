@@ -1,6 +1,4 @@
-// template; evaluate for viability
-
-import { gql } from "@apollo/client";
+import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql//   login(email: $email, password: $password) { // mutation login($email: String!, $password: String!) {
 //     token

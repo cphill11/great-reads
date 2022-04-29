@@ -1,5 +1,3 @@
-// template; evaluate for viability
-
 import React from "react";
 import {
   Jumbotron,
@@ -18,7 +16,7 @@ import { REMOVE_BOOK } from "../utils/mutations";
 // create state to hold saved bookId values
 const SavedBooks = () => {
   const { loading, data } = useQuery(QUERY_ME);
-  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
+  const [removeBook] = useMutation(REMOVE_BOOK);
 
   const userData = data?.me || {};
 
@@ -34,6 +32,7 @@ const SavedBooks = () => {
       const { data } = await removeBook({
         variables: { bookId },
       });
+      console.log(data);
 
       removeBookId(bookId);
     } catch (err) {
