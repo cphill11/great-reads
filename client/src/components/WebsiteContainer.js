@@ -1,6 +1,6 @@
 //May not need
 
-// import React, { useState } from "react";
+import React, { useState } from "react";
 // import MainPage from "./MainPage";
 // // import ContactInfo from "./ContactInfo";
 // // import Resume from "./Resume";
@@ -31,7 +31,7 @@
 
 //     return (
 //         <div>
-//             <Header />
+//             {/* <Header /> */}
 //             <NavBar currentPage={currentPage} handlePageChange={handlePageChange} />
 //             {renderPage()}
 //             <Footer />
