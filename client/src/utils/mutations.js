@@ -1,25 +1,37 @@
 import { gql } from '@apollo/client';
 
-export const LOGIN_USER = gql`
+export const LOGIN_USER = gql//   login(email: $email, password: $password) { // mutation login($email: String!, $password: String!) {
+//     token
+//     user {
+//       _id
+//       username
+//     }
+//   }
+// }
+`
   mutation login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
+      _id
+      username
+      email
     }
   }
 `;
 
-export const ADD_USER = gql`
+export const ADD_USER = gql//   addUser(username: $username, email: $email, password: $password) { // mutation addUser($username: String!, $email: String!, $password: String!) {
+//     token
+//     user {
+//       _id
+//       username
+//     }
+//   }
+// }
+`
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
-      token
-      user {
-        _id
-        username
-      }
+      _id
+      username
+      email
     }
   }
 `;
@@ -30,7 +42,7 @@ export const SAVE_BOOK = gql`
       _id
       username
       email
-      savedBooks{ 
+      savedBooks {
         bookId
         authors
         description
@@ -48,7 +60,7 @@ export const REMOVE_BOOK = gql`
       _id
       username
       email
-      savedBooks{ 
+      savedBooks {
         bookId
         authors
         description
