@@ -14,13 +14,13 @@ const AppNavbar = () => {
     <>
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-            Google Books Search
+          <Navbar.Brand as={Link} to='/' style={{fontSize: "200px", fontFamily: "'Tapestry', cursive", marginLeft: "20%"}}>
+            Great Reads
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar'>
+          <Navbar.Collapse id='navbar' style={{marginBottom: "12%"}}>
             <Nav className='ml-auto'>
-              <Nav.Link as={Link} to='/'>
+              <Nav.Link as={Link} to='/' style={{marginLeft: "23%", marginRight: "2%", backgroundColor: "#464649", border: "1px solid black", borderRadius: "5px", fontSize: "15px"}}>
                 Search For Books
               </Nav.Link>
               {/* if user is logged in show saved books and logout */}
@@ -32,7 +32,7 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)} style={{marginLeft: "2%", backgroundColor: "#464649", border: "1px solid black", borderRadius: "5px", fontSize: "15px"}}>Login/Sign Up</Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
