@@ -2,7 +2,6 @@
 const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
-
   type User {
     _id: ID!
     username: String!
@@ -19,7 +18,7 @@ const typeDefs = gql`
     image: String
     link: String
   }
-  input bookInput{
+  input bookInput {
     bookId: String!
     authors: [String]
     description: String
@@ -33,6 +32,8 @@ const typeDefs = gql`
   }
   type Query {
     me: User
+    users: [User]
+    user(username: String!): User
   }
   type Mutation {
     login(email: String!, password: String!): Auth
@@ -41,7 +42,6 @@ const typeDefs = gql`
     removeBook(bookId: ID!): User
   }
 `;
-
 
 // query type for getAllUsers; only queries & mutations (includes put/ post / delete fxn)
 module.exports = typeDefs;
