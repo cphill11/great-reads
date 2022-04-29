@@ -12,4 +12,4 @@ ReactDOM.render(
 );
 
 // might be useful still
-reportWebVitals();
+// reportWebVitals();
