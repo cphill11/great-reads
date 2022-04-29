@@ -1,4 +1,3 @@
-// template; evaluate for viability
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
