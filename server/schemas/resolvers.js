@@ -29,16 +29,11 @@ const resolvers = {
   },
 
   Mutation: {
-    // addUser: async (parent, args) => {
-    //   const user = await User.create(args);
-    //   const token = signToken(user);
-
-    //   return { token, user };
-    // },
     addUser: async (parent, args) => {
       const user = await User.create(args);
+      const token = signToken(user);
 
-      return user;
+      return {token, user};
     },
     // login: async (parent, { email, password }) => {
     //   const user = await User.findOne({ email });
@@ -53,8 +48,6 @@ const resolvers = {
     //     throw new AuthenticationError("Incorrect credentials");
     //   }
 
-    //   const token = signToken(user);
-    //   return { token, user };
     // },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
@@ -69,10 +62,13 @@ const resolvers = {
         throw new AuthenticationError("Incorrect credentials");
       }
 
-      return user;
+      const token = signToken(user);
+
+      return { token, user };
     },
 
     saveBook: async (parent, { bookData }, context) => {
+      console.log(context.user)
       if (context.user) {
         const updatedUser = await User.findOneAndUpdate(
           { _id: context.user._id },

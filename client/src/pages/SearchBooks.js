@@ -11,7 +11,7 @@ import {
 
 import Auth from "../utils/auth";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
-import { useMutation } from "@apollo/react-hooks";
+import { useMutation } from "@apollo/client";
 import { SAVE_BOOK } from "../utils/mutations";
 
 const SearchBooks = () => {
@@ -73,11 +73,14 @@ const SearchBooks = () => {
     // get token
     const token = Auth.loggedIn() ? Auth.getToken() : null;
 
+    console.log(token)
+
     if (!token) {
       return false;
     }
     console.log("hello");
     try {
+      // eslint-disable-next-line
       const response = await saveBook({
         variables: { bookData: { ...bookToSave } },
       });
@@ -95,7 +98,7 @@ const SearchBooks = () => {
 
   return (
     <>
-      <Jumbotron fluid className="text-light bg-dark">
+      <Jumbotron fluid className="searchbar text-light bg-dark">
         <Container>
           <h1>Search for Books!</h1>
           <Form onSubmit={handleFormSubmit}>
@@ -110,6 +113,7 @@ const SearchBooks = () => {
                   placeholder="Search for a book"
                 />
               </Col>
+            
               <Col xs={12} md={4}>
                 <Button type="submit" variant="success" size="lg">
                   Submit Search

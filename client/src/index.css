@@ -5,9 +5,26 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+footer {
+  top: 100vh;
+  text-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to left, rgb(170, 181, 230), rgb(77, 67, 99));
+}
+
+.navbar {
+  text-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to left, rgb(69, 80, 126), rgb(49, 38, 74));
+}
+
+.searchbar {
+  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to left, rgb(236, 239, 247), rgb(125, 124, 126));
 }
