@@ -28,3 +28,8 @@ footer {
   text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   background: linear-gradient(to left, rgb(236, 239, 247), rgb(125, 124, 126));
 }
+
+.myBooks {
+  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to left, rgb(236, 239, 247), rgb(125, 124, 126));
+}

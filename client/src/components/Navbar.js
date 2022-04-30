@@ -31,10 +31,10 @@ const AppNavbar = () => {
               {/* if user is logged in show saved books and logout */}
               {Auth.loggedIn() ? (
                 <>
-                  <Nav.Link as={Link} to='/saved'>
+                  <Nav.Link as={Link} to='/saved' style={{ padding: "20px",marginTop: "", marginLeft: "", backgroundColor: "rgb(72, 68, 82)", border: "2px solid black", borderRadius: "10px", fontSize: "25px"}}>
                     See Your Books
                   </Nav.Link>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+                  <Nav.Link onClick={Auth.logout} style={{ padding: "20px",marginTop: "", marginLeft: "", backgroundColor: "rgb(72, 68, 82)", border: "2px solid black", borderRadius: "10px", fontSize: "25px"}} >Logout</Nav.Link>
                 </>
               ) : (
                 <Nav.Link onClick={() => setShowModal(true)} style={{ padding: "20px",marginTop: "", marginLeft: "", backgroundColor: "rgb(72, 68, 82)", border: "2px solid black", borderRadius: "10px", fontSize: "25px"}}> Login or Sign Up </Nav.Link>
