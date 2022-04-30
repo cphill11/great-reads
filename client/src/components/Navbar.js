@@ -14,10 +14,13 @@ const AppNavbar = () => {
     <>
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
+          <div>
           <Navbar.Brand as={Link} to='/' style={{fontSize: "200px", fontFamily: "'Tapestry', cursive", marginLeft: "20%"}}>
             Great Reads
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
+          </div>
+          <div>
           <Navbar.Collapse id='navbar' style={{marginBottom: "12%"}}>
             <Nav className='ml-auto'>
               {/* <Nav.Link as={Link} to='/' style={{marginLeft: "23%", marginRight: "2%", backgroundColor: "#464649", border: "1px solid black", borderRadius: "5px", fontSize: "25px"}}>
@@ -32,10 +35,11 @@ const AppNavbar = () => {
                   <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
                 </>
               ) : (
-                <Nav.Link onClick={() => setShowModal(true)} style={{marginLeft: "2%", backgroundColor: "#464649", border: "1px solid black", borderRadius: "10px", fontSize: "25px"}}> Login / Sign Up </Nav.Link>
+                <Nav.Link onClick={() => setShowModal(true)} style={{ padding: "20px",marginTop: "", marginLeft: "", backgroundColor: "rgb(72, 68, 82)", border: "2px solid black", borderRadius: "10px", fontSize: "25px"}}> Login or Sign Up </Nav.Link>
               )}
             </Nav>
           </Navbar.Collapse>
+          </div>
         </Container>
       </Navbar>
       {/* set modal data up */}

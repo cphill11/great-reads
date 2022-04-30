@@ -14,6 +14,29 @@ code {
 }
 
 footer {
-  position: sticky;
   top: 100vh;
+  text-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to left, rgb(170, 181, 230), rgb(77, 67, 99));
 }
+
+.navbar {
+  text-shadow: 10px 15px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to left, rgb(69, 80, 126), rgb(49, 38, 74));
+}
+
+.searchbar {
+  text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(to left, rgb(69, 80, 126), rgb(29, 20, 50));
+}
+
+.logSign {
+  background:rgb(21, 20, 24);
+}
+/* a:hover {
+  text-decoration: underline;
+  color: rgb(128, 174, 223);
+} */
+
+/* .placeholder {
+  color:rgb(29, 20, 50);
+} */
