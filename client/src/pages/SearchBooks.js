@@ -111,6 +111,7 @@ const SearchBooks = () => {
                   placeholder="Search for a book"
                 />
               </Col>
+            
               <Col xs={12} md={4}>
                 <Button type="submit" variant="success" size="lg">
                   Submit Search

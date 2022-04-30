@@ -53,7 +53,7 @@ Heroku: https://cwru-great-reads.herokuapp.com/ deployed to Heroku
 
 
 ## Image
-![Screenshot](/src/assets/images/screenshot.png)
+![Screenshot](/assets/images/screenshot.png)
 
 
 
