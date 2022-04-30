@@ -8,7 +8,8 @@ import SearchBooks from "./pages/SearchBooks";
 import SavedBooks from "./pages/SavedBooks";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import './index.css';
+import '../src/index.js';
+import '../src/media-queries.css';
 
 import {
   ApolloClient,
@@ -25,6 +26,7 @@ const httpLink = createHttpLink({
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
+  console.log(token)
   return {
     headers: {
       ...headers,
