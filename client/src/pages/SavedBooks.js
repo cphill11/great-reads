@@ -1,5 +1,5 @@
 import React from "react";
-// import { Redirect, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import {
   Jumbotron,
   Container,
@@ -8,32 +8,33 @@ import {
   CardColumns,
 } from "react-bootstrap";
 
-// import FriendList from "../components/FriendList";
+import FriendList from "../components/FriendList";
 
 import Auth from "../utils/auth";
 import { removeBookId } from "../utils/localStorage";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
-// import { ADD_FRIEND } from "../utils/mutations";
+import { ADD_FRIEND } from "../utils/mutations";
 // create state to hold saved bookId values
 const SavedBooks = () => {
   // const { username: userParam } = useParams(); //please don't break
   const { loading, data } = useQuery(QUERY_ME);
   const [removeBook] = useMutation(REMOVE_BOOK);
-  // const [addFriend] = useMutation(ADD_FRIEND);
+  const [addFriend] = useMutation(ADD_FRIEND);
 
   const userData = data?.me || {};
 
-  // const handleClick = async () => {
-  //   try {
-  //     await addFriend({
-  //       variables: { id: user._id },
-  //     });
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
+  const handleClick = async () => {
+    const friendToSave = userData.find((user) => user._id === user._id);
+    try {
+      await addFriend({
+        variables: { friendToSave },
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   // create function that accepts the book's mongo _id value as param and deletes the book from the database
   const handleDeleteBook = async (bookId) => {
@@ -67,7 +68,6 @@ const SavedBooks = () => {
         </Container>
       </Jumbotron>
       <Container>
-        {/* <div> */}
         <h2>
           {userData.savedBooks?.length
             ? `Viewing ${userData.savedBooks.length} saved ${
@@ -75,13 +75,6 @@ const SavedBooks = () => {
               }:`
             : "You have no saved books!"}
         </h2>
-
-        {/* {userParam && (
-            <button className="btn ml-auto" onClick={handleClick}>
-              Add Friend
-            </button>
-          )} */}
-        {/* </div> */}
 
         {/* <div className="col-12 col-lg-3 mb-3">
           <FriendList
