@@ -1,7 +1,6 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const LOGIN_USER = gql//   login(email: $email, password: $password) { // mutation login($email: String!, $password: String!) {
-//     token
+export const LOGIN_USER = gql//     token //   login(email: $email, password: $password) { // mutation login($email: String!, $password: String!) {
 //     user {
 //       _id
 //       username
@@ -21,8 +20,7 @@ export const LOGIN_USER = gql//   login(email: $email, password: $password) { //
   }
 `;
 
-export const ADD_USER = gql//   addUser(username: $username, email: $email, password: $password) { // mutation addUser($username: String!, $email: String!, $password: String!) {
-//     token
+export const ADD_USER = gql//     token //   addUser(username: $username, email: $email, password: $password) { // mutation addUser($username: String!, $email: String!, $password: String!) {
 //     user {
 //       _id
 //       username
@@ -33,7 +31,7 @@ export const ADD_USER = gql//   addUser(username: $username, email: $email, pass
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
       token
-      user{
+      user {
         _id
         username
         email
@@ -73,6 +71,20 @@ export const REMOVE_BOOK = gql`
         title
         image
         link
+      }
+    }
+  }
+`;
+
+export const ADD_FRIEND = gql`
+  mutation addFriend($id: ID!) {
+    addFriend(friendId: $id) {
+      _id
+      username
+      friendCount
+      friends {
+        _id
+        username
       }
     }
   }
