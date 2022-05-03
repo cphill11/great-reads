@@ -9,6 +9,7 @@ import {
   CardColumns,
 } from "react-bootstrap";
 
+// import book from "../assets/images/book.png";
 import Auth from "../utils/auth";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/client";
@@ -130,6 +131,7 @@ const SearchBooks = () => {
             ? `Viewing ${searchedBooks.length} results:`
             : "Search for a book to begin your adventure..."}
         </h2>
+        
         <CardColumns>
           {searchedBooks.map((book) => {
             return (
