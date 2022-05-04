@@ -65,7 +65,13 @@ MIT
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
+[![Diana's Shield](https://img.shields.io/badge/2332fun-2332fun%20contributed%20to%20this%20project.-blueviolet)](https://github.com/2332fun)
+
+[![Savannah's Shield](https://img.shields.io/badge/Savannahpolcen-Savannahpolcen%20has%20contributed%20to%20this%20project.-brightgreen)](https://github.com/Savannahpolcen/)
+
+[![Sabrina's Shield](https://img.shields.io/badge/Brinabean-Brinabean%20contributed%20to%20this%20project.-pink)](https://github.com/Brinabean)
+
+[![Criste's Shield](https://img.shields.io/badge/cphill11-cphill11%20contributed%20to%20this%20project.-blue)](https://github.com/cphill11)
 
 ## Contributing
 Sticky paws off unless checking with original creator first.  No exceptions.
