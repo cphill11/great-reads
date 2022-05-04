@@ -14,6 +14,7 @@ import Auth from "../utils/auth";
 import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 import { useMutation } from "@apollo/client";
 import { SAVE_BOOK } from "../utils/mutations";
+import Rating from "../components/Rating";
 
 const SearchBooks = () => {
   // create state for holding returned google api data
@@ -49,6 +50,7 @@ const SearchBooks = () => {
       }
 
       const { items } = await response.json();
+      console.log(items);
 
       const bookData = items.map((book) => ({
         bookId: book.id,
@@ -56,6 +58,7 @@ const SearchBooks = () => {
         title: book.volumeInfo.title,
         description: book.volumeInfo.description,
         image: book.volumeInfo.imageLinks?.thumbnail || "",
+        rating: book.volumeInfo.averageRating || "Hasn't been rated yet"
       }));
 
       setSearchedBooks(bookData);
@@ -146,7 +149,8 @@ const SearchBooks = () => {
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
                   <p className="small">Authors: {book.authors}</p>
-                  <Card.Text>{book.description}</Card.Text>
+                  <Card.Text>{book.description}<br></br>Book Rating: <Rating starCount={book.rating}></Rating></Card.Text>
+                  
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedBookIds?.some(
