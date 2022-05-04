@@ -1,8 +1,6 @@
 import { gql } from "@apollo/client";
 
-export const LOGIN_USER = gql//     token //   login(email: $email, password: $password) { // mutation login($email: String!, $password: String!) {
-//     user {
-//       _id
+export const LOGIN_USER = gql//       _id //     user { //     token //   login(email: $email, password: $password) { // mutation login($email: String!, $password: String!) {
 //       username
 //     }
 //   }
@@ -20,9 +18,7 @@ export const LOGIN_USER = gql//     token //   login(email: $email, password: $p
   }
 `;
 
-export const ADD_USER = gql//     token //   addUser(username: $username, email: $email, password: $password) { // mutation addUser($username: String!, $email: String!, $password: String!) {
-//     user {
-//       _id
+export const ADD_USER = gql//       _id //     user { //     token //   addUser(username: $username, email: $email, password: $password) { // mutation addUser($username: String!, $email: String!, $password: String!) {
 //       username
 //     }
 //   }
@@ -76,14 +72,30 @@ export const REMOVE_BOOK = gql`
   }
 `;
 
-export const ADD_FRIEND = gql`
-  mutation addFriend($id: ID!) {
-    addFriend(friendId: $id) {
+export const ADD_THOUGHT = gql`
+  mutation addThought($thoughtText: String!) {
+    addThought(thoughtText: $thoughtText) {
       _id
+      thoughtText
+      createdAt
       username
-      friendCount
-      friends {
+      reactionCount
+      reactions {
         _id
+      }
+    }
+  }
+`;
+
+export const ADD_REACTION = gql`
+  mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
+    addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
+      _id
+      reactionCount
+      reactions {
+        _id
+        reactionBody
+        createdAt
         username
       }
     }
