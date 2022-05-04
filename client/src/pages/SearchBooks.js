@@ -126,7 +126,7 @@ const SearchBooks = () => {
       </Jumbotron>
 
       <Container>
-        <h2>
+        <h2 style={{fontSize: "1.5em", fontFamily: "'Tapestry', cursive"}}>
           {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
             : "Search for a book to begin your adventure..."}
