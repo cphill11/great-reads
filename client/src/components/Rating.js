@@ -4,58 +4,56 @@ import '../index.css';
 const Rating = (props) => {
     const checked = () => {
         console.log(props.starCount);
-            if (props.starCount === 1) {
-                return (
-                    <h2>Rating:</h2>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star"></span>,
-                    <span className = "fa fa-star"></span>,
-                    <span className = "fa fa-star"></span>,
-                    <span className = "fa fa-star"></span>
+        if (props.starCount === 1) {
+            return (
+                <h2>Rating:</h2>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star"></span>,
+                <span className="fa fa-star"></span>,
+                <span className="fa fa-star"></span>,
+                <span className="fa fa-star"></span>
+            )
+
+        } else if (props.starCount === 2) {
+            return (
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star"></span>,
+                <span className="fa fa-star"></span>,
+                <span className="fa fa-star"></span>
+            )
+
+        } else if (props.starCount === 3) {
+            return (
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star"></span>,
+                <span className="fa fa-star"></span>
+            )
+
+        } else if (props.starCount === 4) {
+            return (
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star"></span>
+            )
+
+        } else if (props.starCount === 5) {
+            return (
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>,
+                <span className="fa fa-star checked"></span>
+            )
+
+        }
 
 
-                )
-
-            } else if (props.starCount === 2) {
-                return (
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star"></span>,
-                    <span className = "fa fa-star"></span>,
-                    <span className = "fa fa-star"></span>
-                )
-
-            } else if (props.starCount === 3) {
-                return (
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star"></span>,
-                    <span className = "fa fa-star"></span>
-                )
-
-            } else if (props.starCount === 4) {
-                return (
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star"></span>
-                )
-
-            } else if (props.starCount === 5) {
-                return(
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>,
-                    <span className = "fa fa-star checked"></span>
-                )
-
-            }
-                    
-                
-            }
+    }
 
 // const displayOne = () =>
 //     {
