@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Jumbotron,
   Container,
@@ -8,40 +8,23 @@ import {
 } from "react-bootstrap";
 
 import Auth from "../utils/auth";
-import { removeBookId } from "../utils/localStorage";
+import { saveBookIds, getSavedBookIds } from "../utils/localStorage";
 import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_ME } from "../utils/queries";
-import { REMOVE_BOOK } from "../utils/mutations";
-// create state to hold saved bookId values
-const SavedBooks = () => {
-  const { loading, data } = useQuery(QUERY_ME);
-  const [removeBook] = useMutation(REMOVE_BOOK);
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
+import { SAVE_BOOK } from "../utils/mutations";
 
-  const userData = data?.me || {};
+const SearchUser = (props) => {
+  const { data, loading } = useQuery(QUERY_USER);
 
-  // create function that accepts the book's mongo _id value as param and deletes the book from the database
-  const handleDeleteBook = async (bookId) => {
-    const token = Auth.loggedIn() ? Auth.getToken() : null;
+  const [currentUsers, setUsers] = useState([data]);
 
-    if (!token) {
-      return false;
-    }
+  const userData = data?.user || {};
 
-    try {
-      const { data } = await removeBook({
-        variables: { bookId },
-      });
-      console.log(data);
+  useEffect(() => {
+    return () => setUsers(data);
+  });
 
-      removeBookId(bookId);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-
-  if (loading) {
-    return <h2>Loading Data...</h2>;
-  }
+  console.log(currentUsers);
 
   return (
     <>
@@ -56,7 +39,7 @@ const SavedBooks = () => {
             ? `Viewing ${userData.savedBooks.length} saved ${
                 userData.savedBooks.length === 1 ? "book" : "books"
               }:`
-            : "You have no saved books!"}
+            : "They have no saved books!"}
         </h2>
 
         <CardColumns>
@@ -74,12 +57,12 @@ const SavedBooks = () => {
                   <Card.Title>{book.title}</Card.Title>
                   <p className="small">Authors: {book.authors}</p>
                   <Card.Text>{book.description}</Card.Text>
-                  <Button
+                  {/* <Button
                     className="btn-block btn-danger"
                     onClick={() => handleDeleteBook(book.bookId)}
                   >
                     Delete this Book!
-                  </Button>
+                  </Button> */}
                 </Card.Body>
               </Card>
             );
@@ -90,4 +73,4 @@ const SavedBooks = () => {
   );
 };
 
-export default SavedBooks;
+export default SearchUser;
