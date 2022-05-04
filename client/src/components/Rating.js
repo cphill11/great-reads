@@ -71,9 +71,9 @@ const Rating = (props) => {
     }
 
     return (
-        <div>
+        <li>
             {checked()}
-        </div>
+        </li>
     )
 }
 
