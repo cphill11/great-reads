@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt");
 
 // import schema from Book.js
 const bookSchema = require("./Book");
-const thoughtSchema = require("./Thought");
 
 const userSchema = new Schema(
   {
