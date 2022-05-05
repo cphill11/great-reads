@@ -1,9 +1,6 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
-export const LOGIN_USER = gql//   login(email: $email, password: $password) { // mutation login($email: String!, $password: String!) {
-//     token
-//     user {
-//       _id
+export const LOGIN_USER = gql//       _id //     user { //     token //   login(email: $email, password: $password) { // mutation login($email: String!, $password: String!) {
 //       username
 //     }
 //   }
@@ -21,10 +18,7 @@ export const LOGIN_USER = gql//   login(email: $email, password: $password) { //
   }
 `;
 
-export const ADD_USER = gql//   addUser(username: $username, email: $email, password: $password) { // mutation addUser($username: String!, $email: String!, $password: String!) {
-//     token
-//     user {
-//       _id
+export const ADD_USER = gql//       _id //     user { //     token //   addUser(username: $username, email: $email, password: $password) { // mutation addUser($username: String!, $email: String!, $password: String!) {
 //       username
 //     }
 //   }
@@ -33,7 +27,7 @@ export const ADD_USER = gql//   addUser(username: $username, email: $email, pass
   mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
       token
-      user{
+      user {
         _id
         username
         email
@@ -73,6 +67,36 @@ export const REMOVE_BOOK = gql`
         title
         image
         link
+      }
+    }
+  }
+`;
+
+export const ADD_THOUGHT = gql`
+  mutation addThought($thoughtText: String!) {
+    addThought(thoughtText: $thoughtText) {
+      _id
+      thoughtText
+      createdAt
+      username
+      reactionCount
+      reactions {
+        _id
+      }
+    }
+  }
+`;
+
+export const ADD_REACTION = gql`
+  mutation addReaction($thoughtId: ID!, $reactionBody: String!) {
+    addReaction(thoughtId: $thoughtId, reactionBody: $reactionBody) {
+      _id
+      reactionCount
+      reactions {
+        _id
+        reactionBody
+        createdAt
+        username
       }
     }
   }

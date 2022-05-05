@@ -6,10 +6,12 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SearchBooks from "./pages/SearchBooks";
 import SavedBooks from "./pages/SavedBooks";
+import DiscussionBoard from "./pages/DiscussionBoard";
+import SingleDiscussion from "./pages/SingleDiscussion";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import '../src/index.js';
-import '../src/media-queries.css';
+import "../src/index.js";
+import "../src/media-queries.css";
 
 import {
   ApolloClient,
@@ -26,7 +28,7 @@ const httpLink = createHttpLink({
 
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
-  console.log(token)
+  console.log(token);
   return {
     headers: {
       ...headers,
@@ -49,6 +51,8 @@ function App() {
           <Switch>
             <Route exact path="/" component={SearchBooks} />
             <Route exact path="/saved" component={SavedBooks} />
+            <Route exact path="/discussion" component={DiscussionBoard} />
+            <Route exact path="/thought/:id" component={SingleDiscussion} />
             <Route render={() => <h1 className="display-2">Wrong page!</h1>} />
           </Switch>
           <Footer></Footer>

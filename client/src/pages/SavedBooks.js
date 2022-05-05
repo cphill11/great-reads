@@ -12,7 +12,6 @@ import { removeBookId } from "../utils/localStorage";
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import { REMOVE_BOOK } from "../utils/mutations";
-
 // create state to hold saved bookId values
 const SavedBooks = () => {
   const { loading, data } = useQuery(QUERY_ME);
@@ -59,6 +58,7 @@ const SavedBooks = () => {
               }:`
             : "You have no saved books!"}
         </h2>
+
         <CardColumns>
           {userData.savedBooks?.map((book) => {
             return (
