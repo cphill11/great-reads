@@ -14,18 +14,6 @@ body {
   padding-bottom: 5em;
 }
 
-li {
-  list-style-type: none;
-}
-
-.checked {  
-  color : rgb(214, 214, 4);  
-  font-size : 20px;  
-}  
-.unchecked {  
-  font-size : 20px;  
-} 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
