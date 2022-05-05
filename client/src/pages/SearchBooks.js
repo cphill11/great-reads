@@ -150,7 +150,6 @@ const SearchBooks = () => {
                   <Card.Title>{book.title}</Card.Title>
                   <p className="small">Authors: {book.authors}</p>
                   <Card.Text>{book.description}<br></br>Book Rating: <Rating starCount={book.rating}></Rating></Card.Text>
-                  
                   {Auth.loggedIn() && (
                     <Button
                       disabled={savedBookIds?.some(

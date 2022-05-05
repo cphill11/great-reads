@@ -26,6 +26,9 @@ const bookSchema = new Schema({
     type: String,
     required: true,
   },
+  rating: {
+    type: Object,
+  },
 });
 
 module.exports = bookSchema;
