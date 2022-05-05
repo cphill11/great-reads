@@ -17,7 +17,7 @@ const AppNavbar = () => {
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container fluid>
           <div>
-          <Navbar.Brand as={Link} to='/' style={{fontSize: "200px", fontFamily: "'Tapestry', cursive", marginLeft: "20%"}}>
+          <Navbar.Brand as={Link} to='/' style={{fontSize: "9em", fontFamily: "'Tapestry', cursive", marginLeft: "25vw"}}>
             Great Reads
           </Navbar.Brand>
           <Navbar.Toggle aria-controls='navbar' />
