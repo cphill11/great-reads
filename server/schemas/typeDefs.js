@@ -34,6 +34,7 @@ const typeDefs = gql`
     title: String!
     image: String
     link: String
+    rating: Float
   }
   input bookInput {
     bookId: String!
@@ -42,6 +43,7 @@ const typeDefs = gql`
     title: String!
     image: String
     link: String
+    rating: Float
   }
 
   type Auth {
