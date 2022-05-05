@@ -25,10 +25,7 @@ const DiscussionBoard = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (
-            <ThoughtList
-              thoughts={thoughts}
-              title="Some Feed for Thought(s)..."
-            />
+            <ThoughtList thoughts={thoughts} title="Book Discussion Board" />
           )}
         </div>
         {/* {loggedIn && userData ? (

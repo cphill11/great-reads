@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Col, Button } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
 import { ADD_THOUGHT } from "../utils/mutations";
@@ -21,14 +22,15 @@ const ThoughtForm = () => {
       } catch (e) {
         console.error(e);
       }
-
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
-      });
     },
+
+    // update me object's cache
+    //   const { me } = cache.readQuery({ query: QUERY_ME });
+    //   cache.writeQuery({
+    //     query: QUERY_ME,
+    //     data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
+    //   });
+    // },
   });
 
   // update state based on form input changes
@@ -69,14 +71,16 @@ const ThoughtForm = () => {
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="Here's a new thought..."
+          placeholder="Post a book topic!"
           value={thoughtText}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
-        <button className="btn col-12 col-md-3" type="submit">
-          Submit
-        </button>
+        <Col xs={12} md={4}>
+          <Button type="submit" variant="success" size="lg">
+            Submit
+          </Button>
+        </Col>
       </form>
     </div>
   );

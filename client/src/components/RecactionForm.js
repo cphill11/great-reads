@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Col, Button } from "react-bootstrap";
 
 import { useMutation } from "@apollo/client";
 import { ADD_REACTION } from "../utils/mutations";
@@ -46,15 +47,17 @@ const ReactionForm = ({ thoughtId }) => {
         onSubmit={handleFormSubmit}
       >
         <textarea
-          placeholder="Leave a reaction to this thought..."
+          placeholder="Leave a comment on this discussion..."
           value={reactionBody}
           className="form-input col-12 col-md-9"
           onChange={handleChange}
         ></textarea>
 
-        <button className="btn col-12 col-md-3" type="submit">
-          Submit
-        </button>
+        <Col xs={12} md={4}>
+          <Button type="submit" variant="success" size="lg">
+            Submit
+          </Button>
+        </Col>
       </form>
 
       {error && <div>Something went wrong...</div>}
